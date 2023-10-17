@@ -1,0 +1,335 @@
+1. In this coding challenge, your task is to create a package.json file for your project using the npm init command. The package.json file is essential for managing dependencies, scripts, and other project-related details. Below is the expected folder structure.
+
+{}
+package.json
+
+Ans = To create a package.json file for your project using the npm init command, follow these steps:
+
+Open your terminal or command prompt.
+
+Navigate to the root directory of your project using the cd command. If your project is in a folder named "01," use the following command:
+
+bash
+Copy code
+cd 01
+Once you are inside your project directory, run the following command to initiate the setup process for package.json:
+
+csharp
+Copy code
+npm init
+You will be prompted to provide information about your project, such as the package name, version, description, entry point, test command, and more. You can press Enter to accept the default values or provide your own. For example:
+
+yaml
+Copy code
+package name: (01) 
+version: (1.0.0) 
+description: 
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+After you've provided the information or accepted the defaults, the npm init command will generate a package.json file based on your input.
+
+Once the process is complete, you should see a package.json file in your project directory (in this case, the "01" directory) that contains the project configuration.
+
+Your package.json file is now created, and you can use it to manage dependencies, scripts, and other project-related details for your project. Make sure to add dependencies and scripts as needed by manually editing the package.json file or by using the npm install command for dependencies and adding scripts in the "scripts" section of package.json.
+
+
+2. In the same project directory created in the above assignment, your task is to create a new file index.js and using the fs module add information about Node.js architecture to a new file nodejs_architecture.txt. Below are the expected files in the project folder.
+JS index.js
+nodejs_architecture.txt
+Ans = 
+To accomplish this task, you can create an index.js file that contains information about Node.js architecture and write this information to a new file named nodejs_architecture.txt using the fs module. Here's a step-by-step guide:
+
+Navigate to your project directory, which is the "01" directory in your case, using the command:
+
+bash
+Copy code
+cd 01
+Create the index.js file by running the following command:
+
+bash
+Copy code
+touch index.js
+Now, you can open the index.js file in a code editor of your choice and add information about Node.js architecture. For example:
+
+javascript
+Copy code
+// index.js
+
+const fs = require('fs');
+
+const nodejsArchitectureInfo = `
+Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It uses the V8 JavaScript engine, which is developed by Google, to execute JavaScript code on the server side.
+
+Node.js follows an event-driven, non-blocking I/O model, which makes it efficient for handling asynchronous operations. It's commonly used for building server-side applications, including web servers and APIs.
+`;
+
+// Write the information to nodejs_architecture.txt
+fs.writeFile('nodejs_architecture.txt', nodejsArchitectureInfo, (err) => {
+  if (err) {
+    console.error('Error writing to the file:', err);
+  } else {
+    console.log('Node.js architecture information has been written to nodejs_architecture.txt');
+  }
+});
+Save the index.js file.
+
+Now, run the index.js script to create the nodejs_architecture.txt file and write the information to it:
+
+bash
+Copy code
+node index.js
+You should see a message indicating that the Node.js architecture information has been written to nodejs_architecture.txt.
+
+Your project directory should now contain both the index.js file and the nodejs_architecture.txt file with the Node.js architecture information.
+
+
+
+
+3. Continuing assignment 2. Here, let's create a new file named index.js and use the fs module to read the content of nodejs_architecture.txt and print the content to the console.
+Node.js is a platform that utilizes JavaScript and is primarily employed for developing web applications that are highly focused o n input/output operations, including but not limited to chat applications and multimedia streaming websites. The platform is const ructed using Google Chrome's V8 JavaScript engine. A web application is a type of software that executes on a server and is displa yed by a client's browser that obtains all the application's resources over the internet.\\
+Ans = To read the content of the nodejs_architecture.txt file and print it to the console, you can create a new index.js file in your project directory. Here are the steps to do that:
+
+Make sure you are in your project directory (the "01" directory). If not, navigate to it using the following command:
+
+bash
+Copy code
+cd 01
+Create a new index.js file using the touch command:
+
+bash
+Copy code
+touch index.js
+Now, open the index.js file in your code editor and add the following code to read the content of nodejs_architecture.txt and print it to the console:
+
+javascript
+Copy code
+const fs = require('fs');
+
+// Read the content of nodejs_architecture.txt
+fs.readFile('nodejs_architecture.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading the file:', err);
+  } else {
+    console.log(data);
+  }
+});
+Save the index.js file.
+
+To execute the index.js script, run the following command in your terminal:
+
+bash
+
+node index.js
+The content of nodejs_architecture.txt will be read and printed to the console.
+The output will be:
+
+
+Node.js is a platform that utilizes JavaScript and is primarily employed for developing web applications that are highly focused on input/output operations, including but not limited to chat applications and multimedia streaming websites. The platform is constructed using Google Chrome's V8 JavaScript engine. A web application is a type of software that executes on a server and is displayed by a client's browser that obtains all the application's resources over the internet.
+This script reads the content of nodejs_architecture.txt using the fs.readFile function and then prints it to the console.
+
+
+
+Q5. To wind up the fs module walk"through challenges, let’s delete the nodejs_architecture&txt file& On deletion
+print "File Deleted SuccessFully" to the console%.
+Ans = Sure, here's an example code snippet that demonstrates how to delete a file using the fs module in Node.js and print a success message to the console:
+
+```javascript
+const fs = require('fs');
+
+// Specify the path of the file to be deleted
+const filePath = 'nodejs_architecture.txt';
+
+// Delete the file
+fs.unlink(filePath, (err) => {
+  if (err) {
+    console.error('Error deleting the file:', err);
+  } else {
+    console.log('File Deleted Successfully');
+  }
+});
+```
+
+In this code, we use the `unlink` function from the fs module to delete the file at the specified `filePath`. If an error occurs during the deletion process, an error message will be printed to the console. Otherwise, the success message "File Deleted Successfully" will be printed.  
+
+
+Q6.Assume a situation where our server restricts access to its configuration via the user interface& The only way
+to obtain the OS and release information is through a programmatic approach& In this challenge, you are
+expected to use the os module and print the os name and the os"release version to the console&Operating system name: Windows_NT OS release: 10.0.19045.
+Ans = To obtain the OS name and release version programmatically using the os module in Node.js and print the information to the console, you can create a simple Node.js script. Here's how you can do it:
+
+javascript
+Copy code
+const os = require('os');
+
+const osName = os.type();
+const osRelease = os.release();
+
+console.log(`Operating system name: ${osName} OS release: ${osRelease}`);
+Create a new JavaScript file, e.g., os_info.js.
+
+Open the os_info.js file in a code editor.
+
+
+
+Save the file.
+
+To execute the script, run the following command in your terminal:
+
+bash
+
+node os_info.js
+The script will use the os module to obtain the OS name and release version and then print the information to the console.
+
+The output will look like this:
+
+sql
+Operating system name: Windows_NT OS release: 10.0.19045
+The script retrieves the OS name and release version and formats the information for display in the console.
+
+
+
+
+7. In this challenge, you are required to use Node.js and the built-in HTTP module to create a server that displays the text "I Am Happy To Learn Full Stack Web Development From PW Skills!" on the browser screen. The goal is to utilize the HTTP module to create an HTTP server, set the port, appropriate content type, and send the message as a response to the client's request, allowing it to display on the browser.
+I Am Happy To Learn Full Stack Web Development From PW Skills!
+Ans= To create a server that displays the given text on the browser screen using Node.js and the built-in HTTP module, you can follow these steps:
+
+First, make sure you have Node.js installed on your machine.
+
+Create a new file, let's say server.js, and open it in a code editor.
+
+Import the built-in http module by adding the following line at the beginning of the file:
+
+
+const http = require('http');
+Create a server by using the http.createServer() method, which takes a callback function as an argument.
+
+
+const server = http.createServer((req, res) => {
+  // Your code for handling requests will go here
+});
+Inside the callback function, set the appropriate content type by using the res.setHeader() method.
+
+
+res.setHeader('Content-Type', 'text/plain');
+Send the desired text as a response to the client's request by using the res.end() method.
+
+
+res.end('I Am Happy To Learn Full Stack Web Development From PW Skills!');
+Set the port number for your server. Typically, port 3000 is used for local development. You can set it by adding the following line:
+
+
+const port = 3000;
+Start the server and make it listen on the specified port by using the server.listen() method.
+
+
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+Save the file.
+
+Open your terminal or command prompt, navigate to the directory where your server.js file is located, and run the following command to start the server:
+
+
+node server.js
+Once the server is running, open a web browser and enter http://localhost:3000 (assuming you set the port to 3000) in the address bar.
+
+You should see the text "I Am Happy To Learn Full Stack Web Development From PW Skills!" displayed on the browser screen.
+
+That's it! You have successfully created a server using Node.js and the HTTP module to display the desired text on the browser screen.
+
+
+
+
+8. Let's simulate a subscription feature similar to YouTube. Using the events module, we'll create a custom event named "subscribe". When this event is triggered, it should display a message in the console indicating that the user has subscribed.
+eventEmitter.emit ("subscribe", "College Wallah");
+// The above statement must print "Thanks For Subscribing to College Wallah".
+ANs = o simulate a subscription feature using the events module in Node.js and display a message in the console when the "subscribe" event is triggered, you can follow these steps:
+
+Start by importing the events module by adding the following line at the top of your code:
+
+
+const EventEmitter = require('events');
+Create a new instance of EventEmitter by initializing a variable with the EventEmitter class:
+
+
+const eventEmitter = new EventEmitter();
+Define a function that will be executed when the "subscribe" event is triggered:
+
+
+const subscribeEventHandler = (channelName) => {
+  console.log(`Thanks For Subscribing to ${channelName}`);
+};
+Attach the event handler function to the "subscribe" event using the on method of the eventEmitter object:
+
+
+eventEmitter.on('subscribe', subscribeEventHandler);
+Trigger the "subscribe" event and pass any desired data, such as the channel name, as an argument:
+
+
+eventEmitter.emit('subscribe', 'College Wallah');
+Save the code file and run it.
+
+The console should display the message "Thanks For Subscribing to College Wallah".
+
+That's it! You have now implemented a custom event using the events module in Node.js to simulate a subscription feature and displayed the appropriate message when the "subscribe" event is triggered.
+
+
+
+9. While working with the events module, one interesting observation is that when an event is created and called, the associated event handler is triggered. However, what happens if we remove an event and then try to call it? In this coding challenge let's create an event handler and call it. Later let's remove the event handler and observe what happens when we call it.
+Ans = When an event handler is removed using the removeListener method in the events module, attempting to call that event again will not trigger the removed event handler. Instead, it will have no effect as the event handler is no longer associated with the event.
+
+Here's an example of how you can create an event handler, remove it, and observe the behavior when calling the event after removal:
+
+
+const EventEmitter = require('events');
+const eventEmitter = new EventEmitter();
+
+// Define an event handler function
+const eventHandler = () => {
+  console.log('Event handler is called');
+};
+
+// Attach the event handler to the event
+eventEmitter.on('myEvent', eventHandler);
+
+// Call the event and trigger the event handler
+eventEmitter.emit('myEvent'); // Output: "Event handler is called"
+
+// Remove the event handler
+eventEmitter.removeListener('myEvent', eventHandler);
+
+// Call the event again after removal
+eventEmitter.emit('myEvent'); // No output or effect
+In the example above, we create an event handler function eventHandler and attach it to the event named 'myEvent' using eventEmitter.on(). When we call eventEmitter.emit('myEvent'), it triggers the event handler and logs "Event handler is called" to the console.
+
+Next, we remove the event handler using eventEmitter.removeListener('myEvent', eventHandler). After removing the event handler, calling eventEmitter.emit('myEvent') no longer has any effect, and no output is logged to the console.
+
+This behavior happens because the event handler is no longer associated with the event, so calling the event does not trigger any action.
+
+
+
+
+10. In continuation of the 8th question, let's now explore the concept of the maximum number of listeners allowed for event handlers. For this coding challenge, your task is to determine the current maximum number of event listeners associated with an event and then set the maximum number of event listeners to 5. Note that the default maximum number of listeners might vary. Your task is to limit the number of listeners to 5.
+The default maximum number of event listners are: 10 The updated maximum number of event listners are: 5
+Ans = In Node.js, the EventEmitter class allows you to set a maximum number of listeners for a given event to prevent memory leaks caused by too many event listeners. By default, the maximum number of listeners is set to 10, but you can modify it to fit your needs.
+
+To determine the current maximum number of event listeners associated with an event and set the maximum number of event listeners to 5, you can use the getMaxListeners and setMaxListeners methods of the EventEmitter class.
+
+Here's an example that demonstrates how to achieve this:
+
+
+const EventEmitter = require('events');
+const eventEmitter = new EventEmitter();
+
+// Get the current maximum number of listeners
+const currentMaxListeners = eventEmitter.getMaxListeners();
+console.log('The default maximum number of event listeners is:', currentMaxListeners);
+
+// Set the maximum number of listeners to 5
+eventEmitter.setMaxListeners(5);
+console.log('The updated maximum number of event listeners is:', eventEmitter.getMaxListeners());
+When you run this code, it will output the current maximum number of event listeners and then update the maximum number to 5.
